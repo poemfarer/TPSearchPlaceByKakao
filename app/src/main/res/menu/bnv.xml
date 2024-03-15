@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_bnv_list" android:title="리스트" android:icon="@drawable/ic_action_list"/>
+    <item android:id="@+id/menu_bnv_map" android:title="지도" android:icon="@drawable/ic_action_map"/>
+    <item android:id="@+id/empty" android:title="" android:enabled="false"/>
+    <item android:id="@+id/menu_bnv_favor" android:title="찜" android:icon="@drawable/ic_action_favor"/>
+    <item android:id="@+id/menu_bnv_option" android:title="옵션" android:icon="@drawable/ic_action_list"/>
+
+</menu>

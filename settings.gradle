@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        //카카오 SDK 저장소 경로
+        //maven { url = java.net.URI("https://devrepo.kakao.com/nexus/content/groups/public/") } - kts식 표기
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
+        //카카오 지도 SDK 저장소 경로
+        maven { url 'https://devrepo.kakao.com/nexus/repository/kakaomap-releases/' }
+    }
+}
+
+rootProject.name = "TPSearchPlaceByKakao"
+include ':app'

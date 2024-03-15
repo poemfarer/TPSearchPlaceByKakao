@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "233428525052",
+    "project_id": "tpsearchplacefarer",
+    "storage_bucket": "tpsearchplacefarer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233428525052:android:4e71a9c579dfe4a2059c79",
+        "android_client_info": {
+          "package_name": "com.farer.tpsearchplacebykakao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD5peK3GdPX66Ng5kuchi5ypDw4tndYVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

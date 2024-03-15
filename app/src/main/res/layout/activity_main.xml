@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/baseline_my_location_24"
+            app:menu="@menu/toolbar_main">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn_white"
+                android:textSize="12sp"
+                android:hint="검색어 입력"
+                android:gravity="center"
+                android:padding="8dp"
+                android:inputType="text"
+                android:imeOptions="actionSearch"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- 단축 검색 아이콘들 -->
+        <HorizontalScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/toolbar"
+            android:scrollbars="none">
+
+            <!-- 별도의 xml 레이아웃 파일에 분리하여 작성 -->
+            <!-- id 설정이 있어야 layout 하위 뷰들의 id를 binding 할 수 있음 -->
+            <include layout="@layout/choice_list" android:id="@+id/layout_choice"/>
+
+        </HorizontalScrollView>
+
+        <FrameLayout
+            android:id="@+id/container_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/scroll_view"
+            android:layout_marginTop="8dp"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/white">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bnv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.BottomNavigationView"
+            android:layout_marginRight="16dp"
+            app:menu="@menu/bnv"
+            android:background="#00000000"
+            app:itemIconTint="@color/bnv_item"
+            app:itemTextColor="@color/bnv_item"/>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:backgroundTint="@color/black"
+        app:layout_anchor="@id/bab"
+        android:src="@drawable/baseline_refresh_24"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
