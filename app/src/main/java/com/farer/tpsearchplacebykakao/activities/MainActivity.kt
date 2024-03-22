@@ -36,6 +36,8 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+    //버전2 수정
+
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     //카카오 검색에 필요한 요청 데이터 : query(검색어), x(경도-longitude), y(위도-latitude)
