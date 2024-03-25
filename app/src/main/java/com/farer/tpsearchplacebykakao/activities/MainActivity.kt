@@ -2,6 +2,7 @@ package com.farer.tpsearchplacebykakao.activities
 
 import android.Manifest
 import android.animation.ObjectAnimator
+import android.app.Activity
 import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
@@ -52,9 +53,15 @@ class MainActivity : AppCompatActivity() {
     //Kakao search API 응답 결과 객체 참조변수
     var searchPlaceResponse: KakaoSearchPlaceResponse?= null
 
+    private fun loadData(){
+        val db= openOrCreateDatabase("place", Activity.MODE_PRIVATE, null)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        loadData()
 
         //처음 보여질 Fragment 화면에 붙이기
         supportFragmentManager.beginTransaction().add(R.id.container_fragment, PlaceListFragment()).commit()
