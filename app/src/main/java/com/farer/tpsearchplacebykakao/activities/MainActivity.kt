@@ -37,7 +37,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    //버전2 수정
+    //버전3 수정
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
@@ -53,10 +53,9 @@ class MainActivity : AppCompatActivity() {
     //Kakao search API 응답 결과 객체 참조변수
     var searchPlaceResponse: KakaoSearchPlaceResponse?= null
 
-    private fun loadData(){
+    private fun loadData() {
         val db= openOrCreateDatabase("place", Activity.MODE_PRIVATE, null)
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
