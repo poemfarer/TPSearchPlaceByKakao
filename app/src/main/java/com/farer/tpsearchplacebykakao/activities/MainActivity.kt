@@ -4,6 +4,7 @@ import android.Manifest
 import android.animation.ObjectAnimator
 import android.app.Activity
 import android.content.pm.PackageManager
+import android.database.sqlite.SQLiteDatabase
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -37,8 +38,6 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    //버전3 수정
-
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     //카카오 검색에 필요한 요청 데이터 : query(검색어), x(경도-longitude), y(위도-latitude)
@@ -57,7 +56,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        openOrCreateDatabase("place", Activity.MODE_PRIVATE, null)
+        val db= openOrCreateDatabase("place", Activity.MODE_PRIVATE, null)
+        db.execSQL("CREATE TABLE IF NOT EXISTS favor(id, place_name, category_name, phone, address_name, road_address_name, x, y, place_url, distance)")
 
         //처음 보여질 Fragment 화면에 붙이기
         supportFragmentManager.beginTransaction().add(R.id.container_fragment, PlaceListFragment()).commit()
