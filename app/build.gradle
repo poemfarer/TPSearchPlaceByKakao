@@ -12,8 +12,8 @@ android {
         applicationId "com.farer.tpsearchplacebykakao"
         minSdk 26
         targetSdk 34
-        versionCode 5
-        versionName "1.4"
+        versionCode 6
+        versionName "1.5"
 //앱 업데이트 하는 방법
 //versoinCode를 수정, versionName 표기는 major.minor
 //앱 번들 다시 생성, 저장 폴더를 지정할 때 기존 버전 폴더명을 수정해서 남겨둘 수 있음

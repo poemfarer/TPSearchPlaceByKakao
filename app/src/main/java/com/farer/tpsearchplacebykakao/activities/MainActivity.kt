@@ -66,9 +66,9 @@ class MainActivity : AppCompatActivity() {
         binding.bnv.setOnItemSelectedListener{
 
             when(it.itemId){
-                R.id.menu_bnv_list-> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, PlaceListFragment()).commit()
-                R.id.menu_bnv_map-> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, PlaceMapFragment()).commit()
-                R.id.menu_bnv_favor-> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, PlaceFavorFragment()).commit()
+                R.id.menu_bnv_list-> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, PlaceListFragment()).commitAllowingStateLoss()
+                R.id.menu_bnv_map-> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, PlaceMapFragment()).commitAllowingStateLoss()
+                R.id.menu_bnv_favor-> supportFragmentManager.beginTransaction().replace(R.id.container_fragment, PlaceFavorFragment()).commitAllowingStateLoss()
                 R.id.menu_bnv_option-> Toast.makeText(this, "option", Toast.LENGTH_SHORT).show()
             }
 
